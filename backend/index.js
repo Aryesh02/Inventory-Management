@@ -4,7 +4,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 const loginRoute = require('./routes/login');
-const signupRoute = require('./routes/signup')
+const signupRoute = require('./routes/signup');
+const addcomponentsRoute = require('./routes/addcomponents');
 
 const app = express()
 
@@ -26,6 +27,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 app.use('/login', loginRoute)
 app.use('/signup', signupRoute)
+app.use('/addcomponents', addcomponentsRoute)
 
 app.listen(8000, () => {
     console.log("Server Listening on Port 8000.")
