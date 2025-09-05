@@ -58,7 +58,7 @@ function Inventory() {
             <hr />
             <div className='flex flex-row justify-around mb-4 pt-4'>
               <div className='bg-green-500 border-2 border-green-500 text-white text-xl poppins-medium px-2 py-1 rounded text-center cursor-pointer'>{comp.location}</div>
-              <div onClick={() => {navigate(`/${comp.id}`)}} className='bg-blue-500 border-2 border-blue-500 text-white text-xl poppins-medium px-2 py-1 rounded text-center flex flex-row cursor-pointer hover:bg-white hover:border-2 hover:border-blue-500 hover:text-blue-500'>
+              <div onClick={() => {navigate(`/${comp._id}`)}} className='bg-blue-500 border-2 border-blue-500 text-white text-xl poppins-medium px-2 py-1 rounded text-center flex flex-row cursor-pointer hover:bg-white hover:border-2 hover:border-blue-500 hover:text-blue-500'>
                 View More
                 <FaChevronRight size={24}/>
               </div>
