@@ -1,16 +1,25 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
-    // res.send("Hello From Add.")
+router.post("/", async (req, res) => {
+  // res.send("Hello From Add.")
+  try {
+    const { comp_search } = req.body;
 
-    const {component_name, total_quantity, available_quantity} = req.body;
+    if (comp_search == "Raspberry Pi 4") {
+      return res.status(200).json({
+        comp_search,
+      });
+    }
+    return res.status(400).json({
+      message: "No such component",
+    });
+  } catch (error) {
+    return res.status(400).json({
+      message: "Please try after some time.",
+    });
+  }
+});
 
-    return res.status(200).json({
-        component_name, total_quantity, available_quantity
-    })
-
-})
-
-module.exports = router
+module.exports = router;

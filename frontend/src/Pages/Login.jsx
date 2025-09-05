@@ -33,7 +33,7 @@ function Login() {
                 email,
                 password
             })
-            console.log(response.data);
+            // console.log(response.data);
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('name', response.data.user.name)
             navigate('/dashboard')
