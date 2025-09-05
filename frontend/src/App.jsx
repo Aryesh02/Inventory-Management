@@ -7,6 +7,7 @@ import AddComponents from './Pages/AddComponents';
 import IssueComponents from './Pages/IssueComponents';
 import ReturnComponents from './Pages/ReturnComponents';
 import NewComponent from './Pages/NewComponent';
+import ComponentDetails from './Pages/ComponentDetails';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element= {<Login />} />
         <Route path='/dashboard' element = {<Dashboard />}/>
         <Route path='/inventory' element = {<Inventory />} />
+        <Route path="/:id" element={<ComponentDetails />} />
         <Route path='/add-components' element = {<AddComponents />} />
         <Route path='/new-component' element = {<NewComponent />} />
         <Route path='/issue-components' element = {<IssueComponents />} />
