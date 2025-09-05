@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useRef } from 'react';
 import { CiSearch } from "react-icons/ci";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 function AddComponents() {
@@ -43,6 +43,9 @@ function AddComponents() {
         <div className="border-2 border-l-0 rounded-r flex items-center justify-center px-2">
           <CiSearch size={24} onClick={handleSubmit} className='cursor-pointer'/>
         </div>
+      </div>
+      <div className='mx-auto my-4'>
+        <Link to='/new-component'><button className='bg-[#00a8e8] text-white p-3 text-2xl cursor-pointer'>+ ADD NEW</button></Link>
       </div>
     </div>
   )

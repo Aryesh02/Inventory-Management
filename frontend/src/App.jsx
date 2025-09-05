@@ -6,6 +6,7 @@ import Inventory from './Pages/Inventory';
 import AddComponents from './Pages/AddComponents';
 import IssueComponents from './Pages/IssueComponents';
 import ReturnComponents from './Pages/ReturnComponents';
+import NewComponent from './Pages/NewComponent';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/dashboard' element = {<Dashboard />}/>
         <Route path='/inventory' element = {<Inventory />} />
         <Route path='/add-components' element = {<AddComponents />} />
+        <Route path='/new-component' element = {<NewComponent />} />
         <Route path='/issue-components' element = {<IssueComponents />} />
         <Route path='/return-components' element = {<ReturnComponents />} />
       </Routes>
