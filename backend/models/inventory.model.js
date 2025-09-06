@@ -7,6 +7,7 @@ const inventorySchema = new mongoose.Schema(
     total_quantity: { type: Number, required: true },
     available_quantity: { type: Number, required: true },
     location: { type: String, required: true },
+    type: { type: String, required: true },
   },
   { timestamps: true }
 );

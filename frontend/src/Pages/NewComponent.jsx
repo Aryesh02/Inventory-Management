@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 function NewComponent() {
@@ -16,6 +16,7 @@ function NewComponent() {
     const component_description = useRef(null);
     const component_quantity = useRef(null);
     const component_location = useRef(null);
+    const component_type = useRef(null);
 
     const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -26,8 +27,9 @@ function NewComponent() {
         const description = component_description.current.value;
         const quantity = component_quantity.current.value;
         const location = component_location.current.value;
+        const type = component_type.current.value;
 
-        if (!name || !description || !quantity || !location)
+        if (!name || !description || !quantity || !location || !type)
             return alert("Please enter al the details.")
 
         try {
@@ -35,7 +37,8 @@ function NewComponent() {
                 name,
                 description,
                 quantity,
-                location
+                location,
+                type
             });
             alert(response.data.message)
 
@@ -43,6 +46,7 @@ function NewComponent() {
             component_description.current.value = "";
             component_quantity.current.value = "";
             component_location.current.value = "";
+            component_type.current.value = "";
         } catch (error) {
 
         }
@@ -80,9 +84,14 @@ function NewComponent() {
                             ></textarea>
                         </div>
 
-                        <div className="lg:col-span-2">
+
+                        <div>
                             <label className="poppins-medium text-lg block mb-2">Storage Location</label>
                             <input type="text" ref={component_location} className={inputClass} />
+                        </div>
+                        <div>
+                            <label className="poppins-medium text-lg block mb-2">Type of Component</label>
+                            <input type="text" ref={component_type} className={inputClass} />
                         </div>
                     </div>
 

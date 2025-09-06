@@ -7,14 +7,15 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
     try {
-        const {name, description, quantity, location} = req.body;
+        const {name, description, quantity, location, type} = req.body;
 
         const newComponent = new Inventory({
             name,
             description,
             total_quantity: quantity,
             available_quantity: quantity,
-            location
+            location,
+            type
         })
 
         await newComponent.save();

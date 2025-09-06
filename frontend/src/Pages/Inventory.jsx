@@ -44,26 +44,34 @@ function Inventory() {
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-4 lg:px-20 place-items-center'>
           {components.map((comp) => (
-            <div key={comp.id} className='w-full lg:w-[85%] bg-white min-h-[300px] shadow-lg shadow-gray-400'>
-            <h2 className="poppins-medium text-2xl mb-6 pt-4 pl-4 text-center text-black"><strong>{comp.name}</strong></h2>
-            <h3 className="poppins-medium text-lg mb-6 pl-4 text-gray-600">W{comp.description}</h3>
-            <div className='flex flex-row'>
-              <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-900 w-56"><strong>Total Quantity</strong></h3>
-              <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-600">{comp.total_quantity}</h3>
-            </div>
-            <div className='flex flex-row'>
-              <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-900 w-56"><strong>Available Quantity</strong></h3>
-              <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-600">{comp.available_quantity}</h3>
-            </div>
-            <hr />
-            <div className='flex flex-row justify-around mb-4 pt-4'>
-              <div className='bg-green-500 border-2 border-green-500 text-white text-xl poppins-medium px-2 py-1 rounded text-center cursor-pointer'>{comp.location}</div>
-              <div onClick={() => {navigate(`/${comp._id}`)}} className='bg-blue-500 border-2 border-blue-500 text-white text-xl poppins-medium px-2 py-1 rounded text-center flex flex-row cursor-pointer hover:bg-white hover:border-2 hover:border-blue-500 hover:text-blue-500'>
-                View More
-                <FaChevronRight size={24}/>
+            <div key={comp.id} className='w-full lg:w-[90%] bg-white min-h-[300px] shadow-lg shadow-gray-400'>
+              <h2 className="poppins-medium text-2xl mb-4 pt-4 pl-4 text-center text-black"><strong>{comp.name}</strong></h2>
+              <h3 className="poppins-medium text-lg mb-8 pl-4 text-gray-600">{comp.description}</h3>
+              <div className='flex flex-col lg:flex-row gap-x-12'>
+                <div>
+                  <div className='flex flex-row'>
+                    <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-900 w-56"><strong>Total Quantity</strong></h3>
+                    <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-600">{comp.total_quantity}</h3>
+                  </div>
+                  <div className='flex flex-row'>
+                    <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-900 w-56"><strong>Available Quantity</strong></h3>
+                    <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-600">{comp.available_quantity}</h3>
+                  </div>
+                </div>
+                <div className='flex flex-col'>
+                    <h3 className="poppins-medium text-xl mb-2 pl-4 text-gray-900 w-56"><strong>Type</strong></h3>
+                    <h3 className="poppins-medium text-xl mb-6 pl-4 text-gray-600">{comp.type}</h3>
+                  </div>
+              </div>
+              <hr />
+              <div className='flex flex-row justify-around mb-4 pt-4'>
+                <div className='bg-green-500 border-2 border-green-500 text-white text-xl poppins-medium w-[160px] lg:w-fit px-2 py-1 rounded text-center cursor-pointer'>{comp.location}</div>
+                <div onClick={() => { navigate(`/${comp._id}`) }} className='bg-blue-500 border-2 border-blue-500 text-white text-xl poppins-medium px-2 py-1 rounded text-center flex flex-row items-center cursor-pointer hover:bg-white hover:border-2 hover:border-blue-500 hover:text-blue-500'>
+                  View More
+                  <FaChevronRight size={24} />
+                </div>
               </div>
             </div>
-          </div>
           ))}
         </div>
       </div>
